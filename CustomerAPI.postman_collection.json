@@ -1,0 +1,139 @@
+{
+  "info": {
+    "name": "Customer API Collection",
+    "_postman_id": "c1234567-abcd-1234-abcd-1234567890ab",
+    "description": "Collection for testing Customer API endpoints",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Customer",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john.doe@example.com\",\n  \"annualSpend\": 1500.50,\n  \"lastPurchaseDate\": \"2024-12-01T08:30:00+05:30\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/customers",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "customers"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Customer By ID",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/customers/{{customerId}}",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "customers",
+            "{{customerId}}"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Customer By Email",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/customers/email/john.doe@example.com",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "customers",
+            "email",
+            "john.doe@example.com"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Customer By Name",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/customers/name/john",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "customers",
+            "name",
+            "john"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Update Customer",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"John Updated\",\n  \"email\": \"john.updated@example.com\",\n  \"annualSpend\": 5000,\n  \"lastPurchaseDate\": \"2024-10-10T10:00:00+05:30\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/customers/{{customerId}}",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "customers",
+            "{{customerId}}"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Delete Customer",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "http://localhost:8080/customers/{{customerId}}",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "customers",
+            "{{customerId}}"
+          ]
+        }
+      }
+    }
+  ]
+}
